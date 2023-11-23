@@ -19,7 +19,6 @@ public class HealthBar : MonoBehaviour
         _healthSliderSmooth.value = _player.MaxHealth;
     }
 
-
     private void OnEnable()
     {
         _player.HealthChanged += OnHealtChanged;
@@ -49,7 +48,5 @@ public class HealthBar : MonoBehaviour
         }
 
     }
-
-
 }
 
