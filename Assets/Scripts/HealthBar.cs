@@ -9,9 +9,9 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private TMP_Text _healthDisplay;
     [SerializeField] private Slider _healthSlider;
     [SerializeField] private Slider _healthSliderSmooth;
+    [SerializeField] private float _duration;
 
     private float _step = 100;
-    [SerializeField] private float _duration;
 
     private void Awake()
     {

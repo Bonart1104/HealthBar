@@ -11,37 +11,37 @@ public class Health : MonoBehaviour
     public event UnityAction <float> HealthChanged;
    
     private float _minHealt = 0;
-    private float _health;
+    private float _currentHealth;
 
     public float MaxHealth => _maxHealth;
     public float MinHealth => _minHealt;
-    public float CurrentHealth => _health;
+    public float CurrentHealth => _currentHealth;
 
     private void Start()
     {
-        _health = _maxHealth;
-        HealthChanged?.Invoke(_health);
+        _currentHealth = _maxHealth;
+        HealthChanged?.Invoke(_currentHealth);
     }
 
     public void Heal()
     { 
-        _health += _healthPoints;
+        _currentHealth += _healthPoints;
 
-        if(_health > _maxHealth)
-            _health = _maxHealth;
+        if(_currentHealth > _maxHealth)
+            _currentHealth = _maxHealth;
         
-        HealthChanged?.Invoke(_health);
+        HealthChanged?.Invoke(_currentHealth);
     }
 
 
     public void TakeDamage()
     {
-        _health -= _damage;
+        _currentHealth -= _damage;
 
-        if(_health < _minHealt)
-            _health = _minHealt;
+        if(_currentHealth < _minHealt)
+            _currentHealth = _minHealt;
 
-        HealthChanged?.Invoke(_health);
+        HealthChanged?.Invoke(_currentHealth);
     }
 
 }
